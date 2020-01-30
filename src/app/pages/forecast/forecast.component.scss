@@ -1,0 +1,93 @@
+.projects{
+  overflow: hidden;
+}
+
+.bg {
+  background-image: url("/assets/images/background.jpg");
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  box-shadow:inset 0 0 0 2000px rgba(61, 1, 1, 0.6);
+}
+
+.container {
+  color: #fff;
+  padding-top: 20px;
+}
+
+.form {
+  width: 30%;
+  margin: auto;
+}
+.textContainer{
+  text-align: center
+}
+.saveButton{
+  padding:6px 32px;
+  background-color: #000;
+  color: #40ac4e;
+  border-radius: 50px;
+  margin-top: 35px;
+}
+.form-control-feedback{
+  color: red
+}
+.inputItem{
+  width:80%;
+  height:40px;
+  border-radius: 50px;
+  border: 1px solid #333;
+  text-align: center
+}
+.inputItemRequired{
+  width:80%;
+  height:40px;
+  border-radius: 50px;
+  border: 1px solid red;
+  text-align: center
+}
+.inputLabel{
+  margin-bottom: 5px;
+  margin-top:15px;
+  color:rgb(202, 201, 201)
+}
+
+.weatherData {
+  width: 30%;
+  margin: 30px auto;
+  box-shadow:inset 0 0 0 2000px rgba(253, 202, 113, 0.384);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.weatherData p{
+  margin: 0;
+}
+
+.weather-value {
+  color: #40ac4e;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 900px) {
+  .form, .weatherData{
+    width:80%;
+    margin:auto
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .form, .weatherData{
+    width:80%;
+    margin:auto
+  }
+}
+
+.header-title {
+  color: #fff;
+  margin: 4px;
+}
+
+

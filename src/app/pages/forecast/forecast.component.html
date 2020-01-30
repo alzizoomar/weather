@@ -1,0 +1,75 @@
+<div class="projects bg">
+  <app-header></app-header>
+    <div class="container">
+      <h4 class="header-title">Forecast</h4>
+      <form class="form" (ngSubmit)="onSubmit(mForm)"
+          #mForm="ngForm" id="m_form_2">
+        <div class="m-portlet__body">
+            <div [ngClass]="{'has-danger':mForm.submitted && name.hasError('required') || (name.touched && name.hasError('required'))}">
+                <p class="inputLabel">City</p>
+                <div>
+                    <input [(ngModel)]="cityName" placeholder="city" type="text" class="inputItem" name="name" [ngClass]="{'inputItemRequired': mForm.submitted && name.hasError('required') || (name.touched && name.hasError('required'))}"
+                            required #name="ngModel">
+                    <div *ngIf="mForm.submitted && name.hasError('required') || (name.touched && name.hasError('required'))"
+                        class="form-control-feedback">
+                        required
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+              <button type="submit" class="btn btn-accent saveButton mr-4">
+                  Search
+              </button>
+
+              <button type="submit" class="btn btn-accent saveButton">
+                Update
+            </button>
+        </div>
+        <div class="badge mb-5" *ngIf="lastUpdate">lastUpdate : {{lastUpdate}}</div>
+      </form>
+
+      <div class="weatherData" *ngIf="forecast">
+        <!-- <div *ngFor="let weather of forecast.list | slice:0:5"> -->
+          <p>City : <span class="weather-value">{{forecast.city.name}}</span></p>
+          <!-- <p>Temperature : <span class="weather-value">{{weather.main.temp | number:'1.0-0'}} °C </span>
+            <span> {{weather.weather[0].main}}</span>
+            <span><img width="42" height="42" [src]="weatherIcon" /></span>
+          </p>
+          <p>Real Feel: <span class="weather-value">{{weather.main.feels_like}} °C</span></p>
+          <p>Pressure: <span class="weather-value">{{weather.main.pressure}} mb</span></p>
+          <p>Humidity: <span class="weather-value">{{weather.main.humidity}} g/m3</span></p>
+          <p>Wind Speed: <span class="weather-value">{{weather.wind.speed}} m/s</span></p> -->
+        <!-- </div> -->
+      </div>
+
+      <div class="table-responsive" *ngIf="forecast">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Temperature</th>
+              <th scope="col">Real Feel</th>
+              <th scope="col">Pressure</th>
+              <th scope="col">Humidity</th>
+              <th scope="col">Wind Speed</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let weather of forecast.list | slice:0:5">
+              <td><span class="weather-value">{{weather.main.temp | number:'1.0-0'}} °C </span>
+                <span> {{weather.weather[0].main}}</span>
+                <span><img width="42" height="42" [src]="'http://openweathermap.org/img/wn/' + weather.weather[0].icon + '@2x.png'" /></span>
+              </td>
+              <td><span class="weather-value">{{weather.main.feels_like}} °C</span></td>
+              <td><span class="weather-value">{{weather.main.pressure}} mb</span></td>
+              <td><span class="weather-value">{{weather.main.humidity}} g/m3</span></td>
+              <td><span class="weather-value">{{weather.wind.speed}} m/s</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+    <hr>
+  <app-footer></app-footer>
+</div>
