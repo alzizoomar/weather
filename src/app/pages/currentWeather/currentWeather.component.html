@@ -8,7 +8,7 @@
             <div [ngClass]="{'has-danger':mForm.submitted && name.hasError('required') || (name.touched && name.hasError('required'))}">
                 <p class="inputLabel">City</p>
                 <div>
-                    <input [(ngModel)]="cityName" placeholder="city" type="text" class="inputItem" name="name" [ngClass]="{'inputItemRequired': mForm.submitted && name.hasError('required') || (name.touched && name.hasError('required'))}"
+                    <input [(ngModel)]="cityName" placeholder="Enter city name" type="text" class="inputItem" name="name" [ngClass]="{'inputItemRequired': mForm.submitted && name.hasError('required') || (name.touched && name.hasError('required'))}"
                             required #name="ngModel">
                     <div *ngIf="mForm.submitted && name.hasError('required') || (name.touched && name.hasError('required'))"
                         class="form-control-feedback">
@@ -26,7 +26,7 @@
                 Update
             </button>
         </div>
-        <div class="badge mb-5" *ngIf="lastUpdate">lastUpdate : {{lastUpdate}}</div>
+        <div class="badge" *ngIf="lastUpdate">lastUpdate : {{lastUpdate}}</div>
       </form>
 
       <div class="weatherData" *ngIf="currentWeather">

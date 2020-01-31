@@ -72,22 +72,36 @@
 }
 
 @media screen and (max-width: 900px) {
-  .form, .weatherData{
+  .form {
     width:80%;
     margin:auto
+  }
+
+  .weatherData {
+    width: 80%;
+    margin: 30px auto;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .form, .weatherData{
-    width:80%;
-    margin:auto
+  .form {
+    width: 80%;
+    margin: auto
+  }
+
+  .weatherData {
+    width: 80%;
+    margin: 30px auto;
   }
 }
 
 .header-title {
   color: #fff;
   margin: 4px;
+}
+
+.table {
+  color: white;
 }
 
 

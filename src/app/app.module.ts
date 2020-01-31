@@ -9,8 +9,6 @@ import { SharedModule } from './sharedModule';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
 import {CdkStepperModule} from '@angular/cdk/stepper';
 import {
   MatStepperModule, MatInputModule,
@@ -30,10 +28,8 @@ import { WeatherServices } from './services/api/weather.service';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    SlickCarouselModule,
     CdkStepperModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot(),
     MatInputModule,
     MatButtonModule,
     MatAutocompleteModule,

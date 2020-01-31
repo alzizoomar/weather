@@ -26,6 +26,7 @@ export class CurrentWeatherComponent implements OnInit, OnDestroy {
   }
 
   getCurrentWeather (cityName) {
+    cityName = cityName?cityName:'';
     this.weatherApi.getCurrentWeather(cityName).subscribe(res => {
       if(res) {
         this.currentWeather = res;
