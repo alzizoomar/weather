@@ -2,16 +2,6 @@
   overflow: hidden;
 }
 
-.bg {
-  background-image: url("/assets/images/background.jpg");
-  height: 100%; 
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: scroll;
-  box-shadow:inset 0 0 0 2000px rgba(61, 1, 1, 0.6);
-}
-
 .container {
   color: #fff;
   padding-top: 20px;
@@ -56,6 +46,10 @@
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: .25rem;
+}
+
+.m-form .m-form__group label.col-form-label {
+  padding: 6px !important;
 }
 
 

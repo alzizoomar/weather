@@ -21,7 +21,10 @@
 }
 .active .nav-link{
   font-weight: bold;
-  cursor: pointer
+  color: #40ac4e !important;
+}
+.nav-item .nav-link {
+  cursor: pointer;
 }
 .nav-link{
   text-decoration:none;
@@ -29,11 +32,11 @@
 }
 .nav-link:hover{
   text-decoration:underline;
-  color: #40ac4e !important;
+  color: #64e675 !important;
 }
 .nav-link:active{
   text-decoration:underline;
-  color: #40ac4e !important;
+  color: #64e675 !important;
 }
 .logo{
   width:70px;

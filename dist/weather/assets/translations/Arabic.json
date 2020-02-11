@@ -1,0 +1,24 @@
+{
+  "layout": {
+    "current-weather": "الطقس الحالى",
+    "forecast": "الطقس المتوقع",
+    "contact": "تواصل معنا",
+    "contact-header": "دعنا نتواصل",
+    "contact-text": "نحن نتطلع إلى أن نسمع منك قريبا",
+    "email-us": "ارسل لنا عبر البريد الإلكتروني"
+  },
+  "Weather": {
+    "city": "المدينة",
+    "city-place-holder": "ادخل اسم المدينة",
+    "required": "مطلوب",
+    "search": "بحث",
+    "update": "تحديث",
+    "last-update": "اخر تحديث",
+    "temperature": "درجة الحرارة",
+    "real-feel": "الشعور الحقيقي",
+    "pressure": "الضغط",
+    "humidity": "الرطوبة",
+    "wind-speed": "سرعة الرياح",
+    "time": "الوقت"
+  }
+}

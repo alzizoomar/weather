@@ -1,4 +1,4 @@
-<div class="projects bg">
+<div class="projects">
   <app-header></app-header>
     <div class="container">
       <h4 class="header-title">{{"layout.current-weather" | translate}}</h4>
@@ -41,7 +41,7 @@
       </form>
       <div class="row">
         <div class="col-lg-4 weatherData" *ngIf="currentWeather">
-          <p>{{"Weather.city" | translate}} : <span class="weather-value">{{currentWeather.name}}</span></p>
+          <p>{{"Weather.city" | translate}} : <span class="weather-value">{{currentWeather.name}} - {{currentWeather.sys.country}}</span></p>
           <p>{{"Weather.temperature" | translate}} : <span class="weather-value">{{currentWeather.main.temp | number:'1.0-0'}} °C </span>
             <span> {{currentWeather.weather[0].main}}</span>
             <span><img width="42" height="42" [src]="weatherIcon" /></span>

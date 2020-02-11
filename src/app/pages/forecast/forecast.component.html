@@ -1,4 +1,4 @@
-<div class="projects bg">
+<div class="projects">
   <app-header></app-header>
     <div class="container">
       <h4 class="header-title">{{"layout.forecast" | translate}}</h4>
@@ -41,7 +41,7 @@
       </form>
       <div class="row">
         <div class="col-lg-4 weatherData" *ngIf="forecast">
-          <p>{{"Weather.city" | translate}} : <span class="weather-value">{{forecast.city.name}}</span></p>
+          <p>{{"Weather.city" | translate}} : <span class="weather-value">{{forecast.city.name}} - {{forecast.city.country}}</span></p>
         </div>
       </div>
       <div  *ngIf="forecast">
@@ -58,9 +58,9 @@
                 <th scope="col">{{"Weather.wind-speed" | translate}}</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody dir="ltr">
               <tr *ngFor="let weather of forecast">
-                <td><span class="weather-value">{{weather.dt_txt | date:'HH MM a'}} </span>
+                <td><span class="weather-value">{{weather.dt_txt | date:'hh : mm a'}} </span>
                 <td><span class="weather-value">{{weather.main.temp | number:'1.0-0'}} °C </span>
                   <span> {{weather.weather[0].main}}</span>
                   <span><img width="42" height="42" [src]="'http://openweathermap.org/img/wn/' + weather.weather[0].icon + '@2x.png'" /></span>

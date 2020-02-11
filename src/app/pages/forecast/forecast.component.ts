@@ -57,7 +57,6 @@ export class ForecastComponent implements OnInit {
           return item;
         })
         this.forecastList = Object.values(groupBy(res['list'], item => item.date));
-        console.log(this.forecastList)
         localStorage.setItem('forecastLastUpdate', moment().toISOString());
       }
     }, error => { 
