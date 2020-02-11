@@ -6,3 +6,8 @@ button:focus,button:active {
     outline: none !important;
     box-shadow: none;
 }
+
+div[dir="rtl"] {
+    text-align: right;
+  }
+

@@ -7,15 +7,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './sharedModule';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {CdkStepperModule} from '@angular/cdk/stepper';
-import {
-  MatStepperModule, MatInputModule,
-  MatButtonModule, MatAutocompleteModule,
-  MatDatepickerModule, MatNativeDateModule, MatRadioModule, MatProgressSpinnerModule } from '@angular/material';
 import { WeatherServices } from './services/api/weather.service';
 
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/translations/', '.json');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,17 +30,16 @@ import { WeatherServices } from './services/api/weather.service';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    CdkStepperModule,
     ReactiveFormsModule,
-    MatInputModule,
-    MatButtonModule,
-    MatAutocompleteModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatStepperModule,
-    MatRadioModule,
-    MatProgressSpinnerModule,
-    SharedModule
+    SharedModule,
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: (createTranslateLoader),
+          deps: [HttpClient]
+      }
+    }),
+    ToastrModule.forRoot()
   ],
   providers: [
     WeatherServices,

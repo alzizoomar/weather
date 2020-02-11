@@ -12,14 +12,14 @@ export class WeatherServices extends BaseApiService<any> {
         super(http);
     }
 
-    getCurrentWeather (city: string) {
+    getCurrentWeather (city: string, language:string) {
         return this.http
-            .get(this.baseUrl + this.url + `weather?q=${city}&APPID=${this.APPID}&units=metric`)
+            .get(this.baseUrl + this.url + `weather?q=${city}&APPID=${this.APPID}&units=metric&lang=${language}`)
     }
 
-    getForecast (city: string) {
+    getForecast (city: string, language:string) {
         return this.http
-            .get(this.baseUrl + this.url + `forecast?q=${city}&APPID=${this.APPID}&units=metric`)
+            .get(this.baseUrl + this.url + `forecast?q=${city}&APPID=${this.APPID}&units=metric&lang=${language}`)
     }
 }
 

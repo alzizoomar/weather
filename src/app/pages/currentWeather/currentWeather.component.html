@@ -1,44 +1,56 @@
 <div class="projects bg">
   <app-header></app-header>
     <div class="container">
-      <h4 class="header-title">Current Weather</h4>
-      <form class="form" (ngSubmit)="onSubmit(mForm)"
+      <h4 class="header-title">{{"layout.current-weather" | translate}}</h4>
+      <form class="m-form m-form--state m-form--fit" (ngSubmit)="onSubmit(mForm)"
           #mForm="ngForm" id="m_form_2">
         <div class="m-portlet__body">
-            <div [ngClass]="{'has-danger':mForm.submitted && name.hasError('required') || (name.touched && name.hasError('required'))}">
-                <p class="inputLabel">City</p>
-                <div>
-                    <input [(ngModel)]="cityName" placeholder="Enter city name" type="text" class="inputItem" name="name" [ngClass]="{'inputItemRequired': mForm.submitted && name.hasError('required') || (name.touched && name.hasError('required'))}"
-                            required #name="ngModel">
+            <div class="form-group m-form__group row"
+            [ngClass]="{'has-danger':mForm.submitted && name.hasError('required') || (name.touched && name.hasError('required'))}">
+                <div class="col-lg-3"></div>
+                <label class="col-form-label col-lg-1 col-sm-12">
+                  {{"Weather.city" | translate}}
+                </label>
+                <div class="col-lg-4 col-md-9 col-sm-12">
+                    <input [(ngModel)]="cityName" type="text" class="form-control m-input" name="name"
+                    placeholder="{{'Weather.city-place-holder' | translate}}" required #name="ngModel">
                     <div *ngIf="mForm.submitted && name.hasError('required') || (name.touched && name.hasError('required'))"
                         class="form-control-feedback">
-                        required
+                        {{"Weather.required" | translate}}
                     </div>
                 </div>
             </div>
         </div>
-        <div>
-              <button type="submit" class="btn btn-accent saveButton mr-4">
-                  Search
-              </button>
-
-              <button type="submit" class="btn btn-accent saveButton">
-                Update
-            </button>
+        <div class="m-portlet__foot m-portlet__foot--fit">
+          <div class="row">
+              <div class="col-lg-5 ml-lg-auto mr-lg-auto text-center">
+                  <button type="submit" class="btn btn-accent saveButton">
+                    {{"Weather.search" | translate}}
+                  </button>
+                  <button type="submit" class="btn btn-accent saveButton">
+                    {{"Weather.update" | translate}}
+                  </button>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-5 ml-lg-auto mr-lg-auto">
+              <div class="time-badge" *ngIf="lastUpdate">{{"Weather.last-update" | translate}} : {{lastUpdate}}</div>
+            </div>
+          </div>
         </div>
-        <div class="badge" *ngIf="lastUpdate">lastUpdate : {{lastUpdate}}</div>
       </form>
-
-      <div class="weatherData" *ngIf="currentWeather">
-        <p>City : <span class="weather-value">{{currentWeather.name}}</span></p>
-        <p>Temperature : <span class="weather-value">{{currentWeather.main.temp | number:'1.0-0'}} °C </span>
-          <span> {{currentWeather.weather[0].main}}</span>
-          <span><img width="42" height="42" [src]="weatherIcon" /></span>
-        </p>
-        <p>Real Feel: <span class="weather-value">{{currentWeather.main.feels_like}} °C</span></p>
-        <p>Pressure: <span class="weather-value">{{currentWeather.main.pressure}} mb</span></p>
-        <p>Humidity: <span class="weather-value">{{currentWeather.main.humidity}} g/m3</span></p>
-        <p>Wind Speed: <span class="weather-value">{{currentWeather.wind.speed}} m/s</span></p>
+      <div class="row">
+        <div class="col-lg-4 weatherData" *ngIf="currentWeather">
+          <p>{{"Weather.city" | translate}} : <span class="weather-value">{{currentWeather.name}}</span></p>
+          <p>{{"Weather.temperature" | translate}} : <span class="weather-value">{{currentWeather.main.temp | number:'1.0-0'}} °C </span>
+            <span> {{currentWeather.weather[0].main}}</span>
+            <span><img width="42" height="42" [src]="weatherIcon" /></span>
+          </p>
+          <p>{{"Weather.real-feel" | translate}} : <span class="weather-value">{{currentWeather.main.feels_like}} °C</span></p>
+          <p>{{"Weather.pressure" | translate}} : <span class="weather-value">{{currentWeather.main.pressure}} mb</span></p>
+          <p>{{"Weather.humidity" | translate}} : <span class="weather-value">{{currentWeather.main.humidity}} g/m3</span></p>
+          <p>{{"Weather.wind-speed" | translate}} : <span class="weather-value">{{currentWeather.wind.speed}} m/s</span></p>
+        </div>
       </div>
     </div>
     <hr>

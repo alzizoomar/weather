@@ -1,0 +1,24 @@
+{
+    "layout": {
+      "current-weather": "Current Weather",
+      "forecast": "Forecast",
+      "contact": "Contact us",
+      "contact-header": "Let's Contact",
+      "contact-text": "We are looking forward to hear from you soon",
+      "email-us": "Email Us"
+    },
+    "Weather": {
+      "city": "City",
+      "city-place-holder": "Enter City Name",
+      "required": "Required",
+      "search": "Search",
+      "update": "Update",
+      "last-update": "Last Update",
+      "temperature": "Temperature",
+      "real-feel": "Real Feel",
+      "pressure": "Pressure",
+      "humidity": "Humidity",
+      "wind-speed": "Wind Speed",
+      "time": "Time"
+    }
+}

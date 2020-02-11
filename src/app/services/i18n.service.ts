@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { includes } from 'lodash';
 import { environment } from "../../environments/environment";
-/*import enUS from '../../translations/en-US.json';
-import arEG from '../../translations/ar-EG.json';*/
 
 const languageKey = 'language';
 
@@ -24,11 +22,7 @@ export class I18nService {
     supportedLanguages: string[];
     public currentLanguage: any;
 
-    constructor(private translateService: TranslateService) {
-        // Embed languages to avoid extra HTTP requests
-        //translateService.setTranslation('English', enUS);
-        //translateService.setTranslation('العربية', arEG);
-    }
+    constructor(private translateService: TranslateService) {}
 
     /**
      * Initializes i18n for the application.
@@ -62,7 +56,7 @@ export class I18nService {
         if (!isSupportedLanguage) {
             language = this.defaultLanguage;
         }
-
+        localStorage.setItem(languageKey, language);
         this.translateService.use(language);
         this.currentLanguage = environment.supportedLanguages.find(l => l.name === language);
     }

@@ -6,9 +6,10 @@ export const environment = {
   production: false,
   baseUrl: 'http://api.openweathermap.org/data/2.5',
   APPID: '4195f4c24f3f3db55618e4ed6e9a605b',
-  defaultLanguage: { name: 'en-US', shortCode: 'en' },
+  defaultLanguage: { name: 'English', shortCode: 'en' },
   supportedLanguages: [
-      { name: 'en-US' }
+      { name: 'English' },
+      { name: 'Arabic' }
   ]
 };
 /*
